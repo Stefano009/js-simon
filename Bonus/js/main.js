@@ -26,23 +26,11 @@ numGrabber.addEventListener('click',
         let num4 = parseInt(document.getElementById('luckyGuess4').value);
         let num5 = parseInt(document.getElementById('luckyGuess5').value);
         userGuess.push(num);
-        //anticheat SYSTEM
-        for(let i=0; i<userGuess.length; i++){
-            if(userGuess.indexOf(userGuess[i]) == -1)
-               userGuess.push(num2)
-          }
-        for(let i=0; i<userGuess.length; i++){
-            if(userGuess.indexOf(userGuess[i]) == -1)
-               userGuess.push(num3)
-          }
-        for(let i=0; i<userGuess.length; i++){
-            if(userGuess.indexOf(userGuess[i]) == -1)
-               userGuess.push(num4)
-          }
-        for(let i=0; i<userGuess.length; i++){
-            if(userGuess.indexOf(userGuess[i]) == -1)
-               userGuess.push(num5)
-          }
+        userGuess.push(num2);
+        userGuess.push(num3);
+        userGuess.push(num4);
+        userGuess.push(num5);
+        console.log(userGuess)
         document.getElementById('answers').innerHTML = 'hai dato ' + simonCheck(simonNumbers, userGuess) + ' risposte esatte!';
         if(simonCheck(simonNumbers, userGuess) == 0)
             document.getElementById('answers').innerHTML = 'veramente neanche un numero?';
@@ -63,11 +51,14 @@ function rndGenerator(){
 }
 //acquisisco i numeri dall'utente
 function simonCheck( num1,  num2) {
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < simonNumbers.length; i++){
         for (let j = 0; j < 5; j++){
-            if (num1[i] == num2[j]){
-                k++;; 
-            }
+            if (num1[i] === num2[j]){
+                k++;
+                //anticheat
+                simonNumbers.splice(i, 1);
+                
+             }
         }
     }
     return k;

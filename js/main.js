@@ -1,13 +1,7 @@
 // Esercizio di oggi: Simon Says
 // nome repo: js-simon
 // Descrizione:
-
-
-
-
-
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-
 // Bonus:
 // Introdurre la parte di grafica oltre a quella di logica :occhiolino:
 // Consigli del giorno:
@@ -27,6 +21,8 @@ for (let i = 0; i < 5; i++){
     simonNumbers.push(rndGenerator());
 }
 // Da li parte un timer di 30 secondi.
+document.getElementById('simonNumbers').innerHTML = simonNumbers
+//alert parte senza layout
 alert(simonNumbers);
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 setTimeout(userNumbers, 3000);

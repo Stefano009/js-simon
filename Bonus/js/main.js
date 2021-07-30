@@ -43,7 +43,7 @@ for (let i = 0; i < 5; i++){
 // Da li parte un timer di 30 secondi.
 document.getElementById('simonNumbers').innerHTML = simonNumbers
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
-setTimeout(simonNone, 3000);
+setTimeout(simonNone, 30000);
 //FUNZIONI 
 // genero numeri random da 1 a 100 con la formula (max - min + 1) + min
 function rndGenerator(){

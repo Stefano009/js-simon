@@ -37,8 +37,15 @@ numGrabber.addEventListener('click',
     }
 )
 // Un alert() espone 5 numeri generati casualmente.
-for (let i = 0; i < 5; i++){
-    simonNumbers.push(rndGenerator());
+// for (let i = 0; i < 5; i++){
+//     simonNumbers.push(rndGenerator());
+// }
+
+while (simonNumbers.length < 5) {
+    let newRndNumber = rndGenerator();
+    if (!simonNumbers.includes(newRndNumber)){
+    simonNumbers.push(newRndNumber);
+    }
 }
 // Da li parte un timer di 30 secondi.
 document.getElementById('simonNumbers').innerHTML = simonNumbers
